@@ -73,6 +73,15 @@ python -m pytest -q
 The tests prove the boundary behaviour with a stub source, prove finite draws
 never oversell, and check uniformity statistically with a seeded generator.
 
+### CI
+
+A GitHub Actions workflow (`.github/workflows/tests.yml`) runs the suite on
+push/PR across Python 3.9 and 3.12. **Actions is currently disabled at the
+account level on GitHub**, so it will not run until that is re-enabled in the
+owner's account settings. Until then, a **pre-push hook** (`.githooks/pre-push`,
+wired via `git config core.hooksPath .githooks`) runs the suite locally before
+any push — the same tests, no account needed.
+
 ## Design notes
 
 `choose_index` sums the drawable units, asks the source for a number below that
