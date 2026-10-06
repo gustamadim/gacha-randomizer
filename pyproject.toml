@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gacha-randomizer"
+version = "1.0.0"
+description = "A transparent, auditable, uniform random picker (the Gachasik selection algorithm)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Gustama Dimas" }]
+keywords = ["random", "picker", "auditable", "fair", "gacha", "weighted", "lottery"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://gacha.gustamadh.my.id"
+
+[tool.setuptools.packages.find]
+include = ["gacha_randomizer*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
